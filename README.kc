@@ -1,0 +1,35 @@
+資料來源：https://github.com/Merical/Mecanum_ros
+
+使用：
+
+  $ roslaunch sc_gazebo demo_gazebo_sc0.launch
+
+  可以帶起模擬環境，下達
+
+   rostopic pub -r 10 /mobile_base/mobile_base_controller/cmd_vel
+
+    ... x,y,z..
+
+  可以控制車體移動。
+
+注意：
+
+  有可能 launch 起來，gazebo 找不到 models，要到
+
+  https://github.com/osrf/gazebo_models , clonde
+
+  models, 譬如放在 /tmp/gazebo_models (很大, 1.8 G)
+
+  然後設定
+   
+    $ export GAZEBO_MODEL_PATH=/tmp/gazebo_models/
+
+  然後才能 launch.
+
+   (gazebo_models 很大, 若 HOME 有空間，直接放在
+
+     ~/.gazebo/models/ 也可以)
+
+
+
+
